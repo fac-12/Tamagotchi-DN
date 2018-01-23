@@ -1,7 +1,11 @@
 import React from "react";
-import { Card } from "./card";
+import { Form } from "./form";
 export default class App extends React.Component {
   render() {
-    return <Card />;
+    return (
+      <div>
+        <Form />
+      </div>
+    );
   }
 }
