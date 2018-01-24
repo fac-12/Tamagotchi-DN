@@ -3,7 +3,10 @@ import { Form } from "./form";
 import { Card } from "./card";
 import { Bar } from "./bar";
 export default class App extends React.Component {
-  state = { data: {} };
+  constructor(props) {
+    super(props);
+    this.state = { data: {} };
+  }
 
   handleChange = data => {
     this.setState({ data });
@@ -11,12 +14,13 @@ export default class App extends React.Component {
 
   render() {
     const { data } = this.state;
+
     return (
       <div>
         <Form info={this.handleChange} />
 
-        {data ? <Card data={data} /> : null}
-        <Bar />
+        {Object.keys(data).length !== 0 ? <Card data={data} /> : null}
+        {Object.keys(data).length !== 0 ? <Bar /> : null}
       </div>
     );
   }
