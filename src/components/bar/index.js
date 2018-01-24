@@ -27,15 +27,20 @@ export class Bar extends React.Component {
     });
   };
 
+  incrementWidth = {
+    width: `${this.state.health}%`
+  };
+
   render() {
     if (this.state.health <= 0) {
       return <div>No job for you!</div>;
     } else {
       return (
         <div>
-          <div className="Bar">
+          <div id="Bar" className={this.incrementWidth}>
             Likelihood to get a job: {this.state.health} %
           </div>
+          <div id="myProgress" />
           <button onClick={this.reset}>Add experience</button>
         </div>
       );
