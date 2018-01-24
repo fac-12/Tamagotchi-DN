@@ -1,6 +1,7 @@
 import React from "react";
 import { Form } from "./form";
 import { Card } from "./card";
+import { Bar } from "./bar";
 export default class App extends React.Component {
   state = { data: {} };
 
@@ -15,6 +16,7 @@ export default class App extends React.Component {
         <Form info={this.handleChange} />
 
         {data ? <Card data={data} /> : null}
+        <Bar />
       </div>
     );
   }
